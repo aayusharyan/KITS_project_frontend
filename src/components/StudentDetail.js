@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 
 const StudentDetail = () => {
@@ -22,7 +22,7 @@ const StudentDetail = () => {
   const [isEditing, setEdit] = useState(false);
 
 
-  const fetchData = () => {
+  const fetchData = useCallback(() => {
     fetch('http://localhost:8080/single_student?id=' + params.student_id)
     .then((res) => {
       return res.json();
@@ -42,12 +42,12 @@ const StudentDetail = () => {
       setClassXIIMark(data.classXIIMark);
       setClassXIISchool(data.classXIISchool);
       setInterests(data.interests);
-    })
-  }
+    });
+  }, [params]);
 
   useEffect(() => {
     fetchData();
-  }, [params, fetchData]);
+  }, [fetchData]);
 
   const onChangeInterests = (e) => {
     const interests_arr = [ ...interests ];
