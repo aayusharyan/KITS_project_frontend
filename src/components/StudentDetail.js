@@ -47,7 +47,7 @@ const StudentDetail = () => {
 
   useEffect(() => {
     fetchData();
-  }, [params]);
+  }, [params, fetchData]);
 
   const onChangeInterests = (e) => {
     const interests_arr = [ ...interests ];

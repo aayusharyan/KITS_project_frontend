@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import './App.css';
 import AdmissionForm from './components/AdmissionForm';
 import StudentList from './components/StudentList';
