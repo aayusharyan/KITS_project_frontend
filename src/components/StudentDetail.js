@@ -23,7 +23,7 @@ const StudentDetail = () => {
 
 
   const fetchData = useCallback(() => {
-    fetch('http://localhost:8080/single_student?id=' + params.student_id)
+    fetch('https://aqueous-reef-15231.herokuapp.com/single_student?id=' + params.student_id)
     .then((res) => {
       return res.json();
     }).then((data) => {
@@ -171,7 +171,7 @@ const StudentDetail = () => {
   const showEditContent = () => {
     return(
       <>
-        <form action={'http://localhost:8080/single_student?id=' + params.student_id} method="POST">
+        <form action={'https://aqueous-reef-15231.herokuapp.com/single_student?id=' + params.student_id} method="POST">
           <h4 className='display_inline'>Name: </h4>
           <input 
             type="text" 

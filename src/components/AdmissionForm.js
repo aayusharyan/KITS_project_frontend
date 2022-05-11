@@ -5,7 +5,7 @@ const AdmissionForm = () => {
     <>
       <h1 className="main_title">Admission Form</h1>
       <div className="main_container">
-        <form action='http://localhost:8080/admission' method='POST'>
+        <form action='https://aqueous-reef-15231.herokuapp.com/admission' method='POST'>
           <input type="text" placeholder="First Name" name='first_name' />
           <input type="text" placeholder="Last Name" name='last_name'/>
           
